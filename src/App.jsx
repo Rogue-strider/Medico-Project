@@ -10,7 +10,7 @@ import Contact from "./components/Contact";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PrescriptionAnalyzer from "./components/Prescription";
-import Medicindetails from "./components/moviedetails";
+import Medicindetails from "./components/Moviedetails";
 
 const App = () => {
   return (
