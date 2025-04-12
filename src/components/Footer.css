@@ -1,0 +1,91 @@
+.foo-container{
+    height: 30dvh;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.top-footer{
+   
+    height:clamp(350px,26dvh,380px);
+    width: 100%;
+    border: 2px solid black;
+    display:flex;
+    justify-content: space-around;
+    margin: 0%;
+    padding: 0%;
+background-color: #26252b;
+border-radius: 1.4rem 1.4rem 0 0;
+
+}
+.top-left-foo{
+width: 40vw;
+display: flex;
+justify-content: center;
+align-items: center;
+gap:4rem;
+
+}
+.fabout{
+  flex: 1 1 0;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.fabout h2{
+   
+    align-self: flex-start;
+  
+    padding:0.2rem 0 0.2rem 12% ;
+    margin-bottom:  0%;
+    
+}
+/* .community-logo{
+    padding:0.2rem 0 0.2rem 26% ;
+    font-size: 1.4rem;
+    align-self: flex-start;
+    display: flex;
+    gap: 0.8rem;
+} */
+ .quick-links ul li{
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    list-style-type:none;
+}
+.quick-links ul{
+    display: flex;
+    flex-direction: column;
+}
+
+ 
+
+.foo-contact{
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.foo-contact span{
+    display: block;
+}
+.touch{
+    font-size: 2rem;
+    padding: 2%;
+}
+.botttom-footer{
+   
+    /* background-color: #ffffff; */
+    border-radius: 0 0 1.3rem  1.3rem;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 5dvh;
+}
