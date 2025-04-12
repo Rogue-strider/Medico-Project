@@ -52,12 +52,12 @@ const About = () => {
       <div className="w-full bg-[#1f1e24] text-white flex flex-col items-center justify-center p-8">
         <h1 className="text-4xl font-bold text-[#6556CD] mb-6">About Medico</h1>
         <p className="text-lg text-gray-300 text-center max-w-3xl mb-6">
-          Medico is your trusted source for comprehensive **medicine search and
-          descriptions**. Our platform helps users easily access accurate
-          information about various medicines, including **usage, dosage, side
-          effects, and interactions**. Whether you're a healthcare professional
+          Medico is your trusted source for comprehensive medicine search and
+          descriptions. Our platform helps users easily access accurate
+          information about various medicines, including usage, dosage, side
+          effects, and interactions. Whether you're a healthcare professional
           or someone managing personal health, Medico simplifies medicine
-          exploration with **real-time updates and a user-friendly interface**.
+          exploration with real-time updates and a user-friendly interface.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
@@ -66,9 +66,9 @@ const About = () => {
               Our Mission
             </h2>
             <p className="mt-2 text-gray-400">
-              We strive to **empower individuals with knowledge about
-              medicines**. Our goal is to ensure that every user finds
-              **reliable** and **detailed** information about the medicines they
+              We strive to empower individuals with knowledge about
+              medicines. Our goal is to ensure that every user finds
+              reliable and detailed information about the medicines they
               need, promoting safer healthcare decisions.
             </p>
           </div>
@@ -78,10 +78,10 @@ const About = () => {
               Key Features
             </h2>
             <ul className="list-disc list-inside mt-2 text-gray-400">
-              <li>Search for **any medicine** instantly.</li>
-              <li>Detailed **descriptions, dosages, and warnings**.</li>
-              <li>Learn about **interactions and side effects**.</li>
-              <li>Accurate **real-time data** to ensure reliability.</li>
+              <li>Search for any medicine instantly.</li>
+              <li>Detailed descriptions, dosages, and warnings.</li>
+              <li>Learn about interactions and side effects.</li>
+              <li>Accurate real-time data to ensure reliability.</li>
             </ul>
           </div>
         </div>
@@ -91,10 +91,10 @@ const About = () => {
             Why Choose Medico?
           </h2>
           <p className="mt-2 text-gray-400">
-            Unlike generic health platforms, Medico is designed with **precision
-            and accuracy**. Our database is regularly updated, ensuring users
-            receive the most current information. We **bridge the gap between
-            patients and essential medicine knowledge**, making healthcare more
+            Unlike generic health platforms, Medico is designed with precision
+            and accuracy. Our database is regularly updated, ensuring users
+            receive the most current information. We bridge the gap between
+            patients and essential medicine knowledge, making healthcare more
             accessible.
           </p>
         </div>
