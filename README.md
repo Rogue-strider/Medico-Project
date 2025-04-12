@@ -35,6 +35,8 @@ The design includes a left sidebar with categories (Home, Medicine, Health Condi
 - *User-Friendly Interface*: Intuitive design for seamless navigation.
 
 ## Website's Screenshot
+**Full Page**
+![alt text](fullPage.png)
 **Home Page**
 ![alt text](mainpage.png)
 **Medicines Page**
