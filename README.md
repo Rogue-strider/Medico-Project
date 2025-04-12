@@ -17,7 +17,7 @@ MEDICO is a user-friendly website that simplifies medicine exploration with real
 
 Based on the screenshots, MEDICO offers a sleek, dark-themed interface with the following key sections:
 
-- *Home Page*: Displays a welcoming "MEDICO - Your Trusted Medicine Information Hub" title, a trending section with medicine cards (currently showing "NO IMAGE AVAILABLE" placeholders), and quick links to categories like Medicine, Ayurveda, Vitamins & Supplements, and Health & Condition. A "Get In Touch" section includes contact details (+91-2928034939, medico@gmail.com).
+- *Home Page*: Displays a welcoming "MEDICO - Your Trusted Medicine Information Hub" title, a trending section with medicine cards (currently showing "NO IMAGE AVAILABLE" placeholders), and quick links to categories like Medicine, Ayurveda, Vitamins & Supplements, and Health & Condition. A "Get In Touch" section includes contact details (anshumansingh0010@gmail.com).
 - *Contact Us Page*: Features a simple form with fields for Name, Email, and Message, accompanied by a purple "Submit" button, set against a dark background for a clean look.
 - *Medicine Category*: Shows a grid of medicine cards under the "Medicine" category, each labeled "Medicine" with "overview more" links, though images are placeholders ("NO IMAGE AVAILABLE").
 - *Personal Care Category*: Similar to the Medicine category, displays a grid of cards labeled "Medicine" (likely a placeholder or error), with no images available.
