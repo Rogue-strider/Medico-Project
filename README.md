@@ -1,4 +1,4 @@
-**NOTE: This Frontend Project will not Work wihtout Backend however i have inserted link of backend repo and you can check this video also**
+**NOTE: This Frontend Project will not Work without Backend however i have inserted link of backend repo and you can check this video also**
 **Backend Repository- https://github.com/Abhay13332/backendmedicine**
 
 
