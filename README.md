@@ -1,3 +1,5 @@
+**NOTE: This Frontend Project will not Work wihtout Backend you can check this video**
+
 # MEDICO - Your Trusted Medicine Information Hub
 
 Welcome to *MEDICO*, a comprehensive platform designed to provide users with accurate and up-to-date information about various medicines, including usage, dosage, side effects, and interactions. Our mission is to empower individuals with knowledge to make informed healthcare decisions while promoting safer healthcare practices.
