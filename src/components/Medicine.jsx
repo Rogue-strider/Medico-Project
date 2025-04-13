@@ -11,47 +11,77 @@ import Sidenav from "./partials/Sidenav";
 const Medicine = () => {
   document.title = "Medico | Medicine ";
   const navigate = useNavigate();
-  const [category, setCategory] = useState("now_playing");
+  const [category, setCategory] = useState("capsule");
   const [medicine, setmedicine] = useState([]);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
   const [isOpen, setIsOpen] = useState(false); // State to track sidenav visibility
-
+const  [loadmed, setloadmed]= useState("Duzela 20 Capsule DR")
+  const  [category1, setcategory1]= useState("injection")
   const toggleSideNav = () => {
     setIsOpen(!isOpen);
   };
   const openSideNav = () => {
     setIsOpen(!isOpen);
   };
-
-  const GetMedicine = async () => {
+  const GetranMedicine = async () => {
     try {
-      const { data } = await axios.get(`/movie/${category}?page=${page}`);
+      console.log(loadmed)
+      const { data } = await axios.post(`/getrandomdata`, {
+        query: category,size:20
+      });
+      console.log("th",data);
+    if (data.length > 0) {
+      setmedicine((preState) => [...preState, ...data]);
+      setPage(page + 1);
+      console.log("if",data);
+    } else {
+      setHasMore(false);
+    } }
+   catch (error) {
+    console.log("Error: ", error);
+  }
+};
 
-      if (data.results.length > 0) {
-        setmedicine((preState) => [...preState, ...data.results]);
-        setPage(page + 1);
-      } else {
-        setHasMore(false);
-      }
-    } catch (error) {
-      console.log("Error: ", error);
-    }
-  };
+  // const GetMedicine = async () => {
+  //   try {
+  //     console.log(loadmed)
+  //     const { data } = await axios.post(`/search/pagesearch`, {
+  //       query: loadmed
+  //     });
+  // console.log(data);
+  //     if (data.length > 0) {
+  //       setmedicine((preState) => [...preState, ...data]);
+  //       setPage(page + 1);
+  //     } else {
+  //       setHasMore(false);
+  //     }
+  //   } catch (error) {
+  //     console.log("Error: ", error);
+  //   }
+  // };
 
   const refreshHandler = () => {
     if (medicine.length === 0) {
-      GetMedicine();
+      // GetMedicine();
+    GetranMedicine();
+
     } else {
       setPage(1);
       setmedicine([]);
-      GetMedicine();
+      // GetMedicine();
+      GetranMedicine();
     }
   };
-
+console.log(medicine.length);
   useEffect(() => {
     refreshHandler();
+    GetranMedicine();
   }, [category]);
+
+
+
+
 
   return medicine.length > 0 ? (
     <div className="flex h-screen overflow-x-hidden bg-[#1f1e24]">
@@ -76,8 +106,8 @@ const Medicine = () => {
                 className="hover:text-[#6556cd] ri-arrow-left-line cursor-pointer"
               ></i>
               Medicine
-              <small className="ml-2 text-sm bg-red-400 text-zinc-600 px-2 py-[2px] rounded">
-                category
+              <small className="ml-2 text-sm  text-zinc-600 px-2 py-[2px] rounded">
+                {category}
               </small>
             </h1>
           </div>
@@ -85,7 +115,7 @@ const Medicine = () => {
             <Topnav isOpen={isOpen} openSideNav={openSideNav} />
             <Dropdown
               title="Category"
-              options={["popular", "top_rated", "c", "d"]}
+              options={["all", "capsule", "tablet", "injection"]}
               func={(e) => setCategory(e.target.value)}
             />
           </div>
@@ -94,7 +124,7 @@ const Medicine = () => {
         {/* InfiniteScroll with scrollableTarget */}
         <InfiniteScroll
           dataLength={medicine.length}
-          next={GetMedicine}
+          next={GetranMedicine}
           hasMore={hasMore}
           loader={<h1>Loading...</h1>}
           scrollableTarget="scrollableDiv"

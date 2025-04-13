@@ -12,7 +12,7 @@ import HorizontalCards from "./partials/HorizontalCards";
 import Loading from "./partials/Loading";
 import noimage from "/noimage.jpg";
 
-const Medicindetails = () => {
+const Medicinedetails = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const { id } = useParams();
@@ -68,9 +68,9 @@ const Medicindetails = () => {
         <img
           className="shadow-[8px_17px_38px_2px_rgba(0,0,0,0.5)] h-[50vh] object-cover"
           src={
-            //   info.detail.poster_path || info.detail.backdrop_path ?`https://image.tmdb.org/t/p/original/${
-            //   info.detail.poster_path || info.detail.backdrop_path
-            // }`:
+              info.detail.img ?`/search/pagesearch${
+              info.detail.img
+            }`:
             noimage
           }
           alt=""
@@ -78,11 +78,8 @@ const Medicindetails = () => {
 
         <div className="content ml-[5%] text-white">
           <h1 className="text-5xl font-black text-white ">
-            {/* {info.detail.name ||
-              info.detail.title ||
-              info.detail.original_name ||
-              info.detail.original_title} */}
-            Medicine Name
+            {info.detail.tabletname}
+
             <small className="text-2xl font-bold text-zinc-200">
               {/* ({info.detail.release_date.split("-")[0]}) */}
             </small>
@@ -184,4 +181,4 @@ const Medicindetails = () => {
   );
 };
 
-export default Medicindetails;
+export default Medicinedetails;

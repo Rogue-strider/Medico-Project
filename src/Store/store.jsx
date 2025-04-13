@@ -18,6 +18,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import movieReducer from './reducers/movieSlice'
 import tvReducer from './reducers/tvSlice'
 import personReducer from './reducers/personSlice'
+import medicineReducer from './reducers/medicineSlice';
 
 
 export const store = configureStore({
@@ -25,5 +26,6 @@ export const store = configureStore({
     movie: movieReducer,
     tv: tvReducer,
     person: personReducer,
+    medicine: medicineReducer,
   },
 })

@@ -4,6 +4,7 @@ import Dropdown from "./partials/Dropdown";
 import Header from "./partials/Header";
 import { useEffect, useState } from "react";
 import axios from "../utils/axios";
+
 import HorizontalCards from "./partials/HorizontalCards";
 import Loading from "./Loading";
 import Footer from "./Footer";
@@ -32,18 +33,28 @@ const Home = () => {
   };
   const getTrending = async () => {
     try {
-      const { data } = await axios.get(`/trending/${category}/day`);
+      const { data } = await axios.post(`/getrandomdata`,{
+        query: category,
+      });
       settrending(data.results);
     } catch (error) {
       console.log("Error: ", error);
     }
   };
+  // const getTrending = async () => {
+  //   try {
+  //     const { data } = await axios.get(`/trending/${category}/day`);
+  //     settrending(data.results);
+  //   } catch (error) {
+  //     console.log("Error: ", error);
+  //   }
+  // };
   useEffect(() => {
     getTrending();
     // !wallpaper && GetHeadWallpaper();
   }, [category]);
 
-  return trending ? (
+  return  (
     <>
       <Sidenav
         isOpen={isOpen}
@@ -53,23 +64,24 @@ const Home = () => {
       <div className={`transition-all h-full px-5 overflow-auto  overflow-x-hidden duration-300 ${isOpen ? " w-[80%]" : "w-[200vw] bg-[#1f1e24]"}`}>
         <Topnav isOpen={isOpen} openSideNav={openSideNav} />
         <Header />
-        <div className=" flex justify-between p-5">
-          <h1 className="text-3xl font-semibold text-zinc-400">Trending</h1>
-          <Dropdown
-            title="Filter"
-            options={["capsule", "injection", "medicine"]}
-            func={(e) => setcategory(e.target.value)}
-          />
+         <div className=" flex justify-between p-5">
+          <h1 className="text-3xl font-semibold text-zinc-400">Capsules</h1>
+          {/*<Dropdown*/}
+          {/*  title="Filter"*/}
+          {/*  options={["capsule", "injection", "tablet"]}*/}
+          {/*  func={(e) => setcategory(e.target.value)}*/}
+          {/*/>*/}
         </div>
-        <HorizontalCards data={trending} />
+        <HorizontalCards datax="capsule" />
+        <h1 className="text-3xl font-semibold text-zinc-400">Injections</h1>
+        <HorizontalCards datax="injection" />
+        <h1 className="text-3xl font-semibold text-zinc-400">Tablets</h1>
+        <HorizontalCards  datax="tablet"/>
         <Footer/>
+
       </div>
     </>
-  ) : (
-    <h1>
-      <Loading />
-    </h1>
-  );
+  ) 
 };
 
 export default Home;

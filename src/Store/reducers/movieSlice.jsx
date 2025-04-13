@@ -5,13 +5,13 @@ const initialState = {
 };
 
 export const movieSlice = createSlice({
-  name: "movie",
+  name: "medicine",
   initialState,
   reducers: {
-    loadmovie: (state, action) => {
+    loadmedicine: (state, action) => {
       state.info = action.payload;
     },
-    removemovie: (state, action) => {
+    removemedicine: (state, action) => {
       state.info = null;
     }
   },

@@ -6,22 +6,76 @@ import noimage from "/noimage.jpg";
 const Topnav = ({ openSideNav, isOpen }) => {
   const [query, setquery] = useState("");
   const [searches, setsearches] = useState([]);
-
+  const [medicine, setmedicine] = useState([]);
+  const [category, setcategory] = useState("capsule");
+  const [page, setPage] = useState(1);
   const GetSearches = async () => {
     try {
-      const { data } = await axios.get(`/search/multi?query=${query}`);
-      setsearches(data.results);
+      const { data } = await axios.post(`/search/searchbarquery`, {
+        query: query,
+      });
+      // console.log(data);
+      setsearches(data);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   };
+  const GetranMedicine = async () => {
+    try {
+      const { data } = await axios.post(`/getrandomdata`, {
+        query: query,
+        size: 20,
+      });
+console.log("gr",data)
+      if (data.length > 0) {
+        setmedicine((preState) => [...preState, ...data]);
+        setPage(page + 1);
+        // console.log("if", medicine);
+      } else {
+        setHasMore(false);
+      }
+    } catch (error) {
+      console.log("Error: ", error);
+    }
+  };
+
+  const refreshHandler = () => {
+    if (medicine.length === 0) {
+      GetranMedicine();
+    } else {
+      setPage(1);
+      setmedicine([]);
+      GetranMedicine();
+    }
+  };
 
   useEffect(() => {
-    GetSearches();
+    refreshHandler();
+    GetranMedicine();
+  }, [category]);
+
+  useEffect(() => {
+    if (query.length > 0) {
+      GetSearches();
+
+    } else {
+      setsearches([]);
+    }
   }, [query]);
+ console.log("te",searches)
+
+
+
+
 
   return (
-    <div className={`flex mx-auto  ${!isOpen ? "w-screen h-[10vh] relative flex items-center mx-auto" : "w-[80%] h-[10vh] relative flex items-center mx-auto"}`}>
+    <div
+      className={`flex mx-auto  ${
+        !isOpen
+          ? "w-screen h-[10vh] relative flex items-center mx-auto"
+          : "w-[80%] h-[10vh] relative flex items-center mx-auto"
+      }`}
+    >
       <i
         onClick={openSideNav}
         className={` ${
@@ -29,7 +83,13 @@ const Topnav = ({ openSideNav, isOpen }) => {
           "isOpen && text-3xl text-[rgb(101,86,205)]  cursor-pointer ri-menu-line"
         }`}
       ></i>
-      <div className={`${isOpen? "w-[100%] h-[10vh] relative flex items-center mx-auto":"w-[80%] h-[10vh] relative flex items-center mx-auto"}`}>
+      <div
+        className={`${
+          isOpen
+            ? "w-[100%] h-[10vh] relative flex items-center mx-auto"
+            : "w-[80%] h-[10vh] relative flex items-center mx-auto"
+        }`}
+      >
         <i className="text-zinc-400 text-3xl ri-search-line"></i>
         <input
           onChange={(e) => setquery(e.target.value)}
@@ -48,25 +108,21 @@ const Topnav = ({ openSideNav, isOpen }) => {
         <div className="z-[100] absolute bg-zinc-200 w-[50%] max-h-[50vh] top-[100%] left-[5%] overflow-auto">
           {searches.map((s, i) => (
             <Link
-              to={`/${s.media_type}/details/${s.id}`}
-              key={i}
+                to={`/medicine/details/${typeof s === "string" ? s : s.name || s.tabletname || s.injectionname || s.capsulename}`}
+                key={i}
+
               className="hover:text-black hover:bg-zinc-300 duration-300 font-semibold text-zinc-600 w-[100%] p-10 flex justify-start items-center border-b-2 border-zinc-100"
             >
-              <img
-                className="w-[10vh] h-[10vh] object-cover rounded mr-5 shadow-lg"
-                src={
-                  // s.backdrop_path || s.profile_path
-                  //   ? `https://image.tmdb.org/t/p/original/${
-                  //       s.backdrop_path || s.profile_path
-                  //     }`
-                  //   :
-                  noimage
-                }
-                alt=""
-              />
+              {/*<img*/}
+              {/*  className="w-[10vh] h-[10vh] object-cover rounded mr-5 shadow-lg"*/}
+              {/*  src={*/}
+              {/*    s.img*/}
+              {/*  }*/}
+              {/*  alt=""*/}
+              {/*/>*/}
               <span>
-                {/* {s.name || s.title || s.original_name || s.original_title} */}
-                Medicine
+                {s}
+
               </span>
             </Link>
           ))}
@@ -80,6 +136,7 @@ const Topnav = ({ openSideNav, isOpen }) => {
         </div>
       </div> */}
       </div>
+
     </div>
   );
 };

@@ -10,7 +10,10 @@ import Contact from "./components/Contact";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PrescriptionAnalyzer from "./components/Prescription";
-import Medicindetails from "./components/Moviedetails";
+import Medicinedetails from "./components/Moviedetails";
+import Medicinesdetails from "./components/Medicinesdetails";
+import Searchedmedicine from "./components/Searchedmedicine";
+import Cart from "./components/Cart";
 
 const App = () => {
   return (
@@ -18,7 +21,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/medicine" element={<Medicine />} />
-        <Route path="/movie/details/:id" element={<Medicindetails />}></Route>
+        <Route path="/medicine/details/:id" element={<Medicinesdetails />}></Route>
+          {/*<Route path="/searchedmedicine" element={<Searchedmedicine />} />*/}
         <Route path="/healthConditions" element={<HealthConditions />} />
         <Route path="/personalCare" element={<PersonalCare />} />
         <Route
@@ -29,8 +33,9 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/prescription" element={<PrescriptionAnalyzer />} />
+          <Route path="/carts" element={<Cart/>} />
       </Routes>
-      r
+
       <ToastContainer position="bottom-center" />
     </div>
   );
