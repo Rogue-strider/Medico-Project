@@ -46,6 +46,8 @@ The design includes a left sidebar with categories (Home, Medicine, Health Condi
 ![alt text](MainPage-2.png)
 **Medicines Page**
 ![alt text](MedicinePage.png)
+**Medicines Details**
+![alt text](details.png)
 **AboutUs Page**
 ![alt text](AboutUs.png)
 
