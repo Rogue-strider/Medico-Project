@@ -38,11 +38,12 @@ The design includes a left sidebar with categories (Home, Medicine, Health Condi
 
 ## Website's Screenshot
 **Full Page**
-![alt text](fullPage.png)
-**Home Page**
 ![alt text](mainpage.png)
+**Home Page**
+![alt text](MainPage-1.png)
+![alt text](MainPage-2.png)
 **Medicines Page**
-![alt text](medicinepage.png)
+![alt text](MedicinePage.png)
 **AboutUs Page**
 ![alt text](AboutUs.png)
 
