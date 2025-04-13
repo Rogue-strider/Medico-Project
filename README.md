@@ -1,5 +1,3 @@
-**NOT COMPLETED YET**
-
 # MEDICO - Your Trusted Medicine Information Hub
 
 Welcome to *MEDICO*, a comprehensive platform designed to provide users with accurate and up-to-date information about various medicines, including usage, dosage, side effects, and interactions. Our mission is to empower individuals with knowledge to make informed healthcare decisions while promoting safer healthcare practices.
@@ -38,7 +36,7 @@ The design includes a left sidebar with categories (Home, Medicine, Health Condi
 
 ## Website's Screenshot
 **Full Page**
-![alt text](mainpage.png)
+![alt text](fullpage1.png)
 **Home Page**
 ![alt text](MainPage-1.png)
 ![alt text](MainPage-2.png)
