@@ -1,4 +1,6 @@
-**NOT COMPLETED YET**
+**NOTE: This Frontend Project with all backend images will not Work without Backend however it work work with basic frontend prototype and i have inserted link of backend repo and you can check this video also**
+**Backend Repository- https://github.com/Abhay13332/backendmedicine**<br>
+**Website Video Link-  https://drive.google.com/file/d/1c9wylNQrWHOYj4bsf5ReSivukd2ubM5y/view?usp=drive_link**
 
 # MEDICO - Your Trusted Medicine Information Hub
 
@@ -38,11 +40,14 @@ The design includes a left sidebar with categories (Home, Medicine, Health Condi
 
 ## Website's Screenshot
 **Full Page**
-![alt text](fullPage.png)
+![alt text](fullpage1.png)
 **Home Page**
-![alt text](mainpage.png)
+![alt text](MainPage-1.png)
+![alt text](MainPage-2.png)
 **Medicines Page**
-![alt text](medicinepage.png)
+![alt text](MedicinePage.png)
+**Medicines Details**
+![alt text](details.png)
 **AboutUs Page**
 ![alt text](AboutUs.png)
 
