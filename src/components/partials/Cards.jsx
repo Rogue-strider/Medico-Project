@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import noimage from "/noimage.jpg";
+import base64url from "base64url";
 
 const Cards = ({ data, title }) => {
 
@@ -10,11 +11,12 @@ const Cards = ({ data, title }) => {
     // });
 
 console.log("data",data);
+
   return (
-      <div className="flex flex-wrap w-full h-full px-[5%] bg-[#1F1E24]">
+      <div className="flex flex-wrap w-full h-full px-[5%] bg-[#161616]">
         {data.map((c) => (
             <Link
-                to={`/medicine/details/${typeof s === "string" ? c : c.name || c.tabletname || c.injectionname || c.capsulename}`}// Adjust based on your routing
+                to={`/medicine/details/${base64url.encode((typeof c === "string" ? c : c.name || c.tabletname || c.injectionname || c.capsulename))}`}// Adjust based on your routing
                 className="relative w-[20vw] bg-white mr-[5%] mb-[5%]"
                 key={c.data} // Use c.id for unique key
             >

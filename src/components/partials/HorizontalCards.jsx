@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "../../utils/axios.jsx";
+import base64url from "base64url";
 
-const HorizontalCards = ({ datax }) => {
+const HorizontalCards = ({ datax,loaded }) => {
   const [category, setcategory] = useState("capsule");
   const [medicine, setmedicine] = useState([]);
   const [page, setPage] = useState(1);
@@ -25,21 +26,24 @@ const HorizontalCards = ({ datax }) => {
     } catch (error) {
       console.log("Error: ", error);
     }
+    loaded();
   };
 
-  const refreshHandler = () => {
+  const refreshHandler =async () => {
     if (medicine.length === 0) {
-      GetranMedicine();
+     await GetranMedicine();
     } else {
       setPage(1);
       setmedicine([]);
-      GetranMedicine();
+     await  GetranMedicine();
     }
   };
 
-  useEffect(() => {
-    refreshHandler();
-    GetranMedicine();
+  useEffect( () => {
+
+    // refreshHandler();
+      GetranMedicine();
+
   }, [category]);
 
   return (
@@ -47,7 +51,7 @@ const HorizontalCards = ({ datax }) => {
         {medicine.length > 0 ? (
             medicine.map((d, i) => (
                 <Link
-                    to={`/medicine/details/${d.tabletname || d.injectionname || d.capsulename}`}
+                    to={`/medicine/details/${ base64url.encode(d.tabletname || d.injectionname || d.capsulename)}`}
                     key={i}
                     className="min-w-[45%] sm:min-w-[30%] md:min-w-[20%] lg:min-w-[15%] mr-3 sm:mr-4 md:mr-5 bg-zinc-900 mb-5 h-[50vh] sm:h-[40vh] md:h-[35vh] flex-shrink-0"
                 >
@@ -67,7 +71,7 @@ const HorizontalCards = ({ datax }) => {
                       {d.tabletname || d.capsulename || d.injectionname}
                     </h1>
                     <p className="mb-2 sm:mb-4 text-xs sm:text-sm">
-                      <span className="text-zinc-500">₹{d.price.toFixed(2)}</span>
+                      <span className="text-zinc-500">₹{d.price ? d.price.toFixed(2) : "unknown"}</span>
                     </p>
                     <div className="relative">
                       <button className="px-2 py-1 sm:px-3 sm:py-2 mt-1 sm:mt-2 bg-[#6556CD] rounded text-xs sm:text-sm text-white">

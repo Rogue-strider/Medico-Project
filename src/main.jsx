@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+import { Buffer } from 'buffer';
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
@@ -13,3 +13,11 @@ createRoot(document.getElementById("root")).render(
     </BrowserRouter>
   </Provider>
 );
+let loader=document.getElementById("loadera");
+if (document.getElementById("loadera")) {
+    loader.remove();
+}
+
+if (!window.Buffer) {
+    window.Buffer = Buffer;
+}

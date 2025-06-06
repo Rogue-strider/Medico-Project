@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import {Link, useNavigate, useParams} from 'react-router-dom';
 import axios from '../utils/axios.jsx';
+import base64url from "base64url";
 
 
-const MedicinesDetails = () => {
-    const { id } = useParams();
+const MedicDetails = () => {
+    let { id } = useParams();
+    id = base64url.decode(id);
+
     const navigate = useNavigate();
     const [medicine, setMedicine] = useState(null); // Only need one medicine object
 
@@ -15,7 +18,7 @@ const MedicinesDetails = () => {
                 query: id
             })
 
-console.log(data)
+            console.log(data)
             if (data ) {
                 setMedicine(data);
             } else {
@@ -35,13 +38,24 @@ console.log(data)
 
 
             {!medicine ? (
-                <p>Loading...</p>
+                <div style={{
+                    height: "100dvh",
+                    width: "100vw",
+                    backgroundColor: "black",
+                    zIndex: 108,
+                    position: "absolute"
+                }}>
+                    <img src="/Preloader IV.gif" style={{
+                        position: "absolute", zIndex: 110, height: "50dvh", width: "50vw", top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)"
+                    }}/></div>
             ) : (
-                <div className="relative w-screen bg-[#1f1e24] h-[120vh] px-[10%]">
+                <div className="relative w-screen bg-[#161616] h-[120vh] px-[10%]">
                     <h1 className="text-2xl font-bold mb-4">Medicine Details</h1>
                     <nav className="w-full h-[10vh] text-zinc-100 flex items-center justify-between gap-10 text-2xl">
                         <div>
-                            <Link
+                        <Link
                                 onClick={() => navigate(-1)}
                                 className="hover:text-[#6556cd] ri-arrow-left-line"
                             ></Link>
@@ -58,7 +72,7 @@ console.log(data)
                     </nav>
                     <div className="w-full flex">
                         <img
-                            className="shadow-[8px_17px_38px_2px_rgba(0,0,0,0.5)] h-[50vh] object-cover"
+                            className="shadow-[8px_17px_38px_2px_rgba(0,0,0,0.5)] h-[50vh] max-w-[30vw] object-contain"
                             src={
                                 medicine.img?.substring(0, 66) +
                                 '0' +
@@ -101,4 +115,4 @@ console.log(data)
     );
 };
 
-export default MedicinesDetails;
+export default MedicDetails;

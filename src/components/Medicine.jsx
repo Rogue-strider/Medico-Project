@@ -84,7 +84,7 @@ console.log(medicine.length);
 
 
   return medicine.length > 0 ? (
-    <div className="flex h-screen overflow-x-hidden bg-[#1f1e24]">
+    <div className="flex h-screen overflow-x-hidden bg-[#161616]">
       <Sidenav
         isOpen={isOpen}
         toggleSideNav={toggleSideNav}
@@ -94,7 +94,7 @@ console.log(medicine.length);
       {/* This is the scrollable container */}
       <div
         id="scrollableDiv"
-        className={`transition-all duration-300 h-screen overflow-auto ${
+        className={`transition-all duration-300 h-screen overflow-auto bg-[#161616] ${
           isOpen ? "w-[80%]" : "w-full"
         }`}
       >

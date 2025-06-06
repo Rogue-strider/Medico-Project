@@ -4,7 +4,6 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     info: null,
 };
-
 export const medicineSlice = createSlice({
     name: "medicine",
     initialState,
@@ -17,7 +16,5 @@ export const medicineSlice = createSlice({
         },
     },
 });
-
 export const { loadmedicine, removemedicine } = medicineSlice.actions;
-
 export default medicineSlice.reducer;
