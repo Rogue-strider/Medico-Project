@@ -108,7 +108,8 @@ console.log("gr",data)
         <div className="z-[100] absolute bg-zinc-200 w-[50%] max-h-[50vh] top-[100%] left-[5%] overflow-auto">
           {searches.map((s, i) => (
             <Link
-                to={`/medicine/details/${typeof s === "string" ? s : s.name || s.tabletname || s.injectionname || s.capsulename}`}
+                // to={`/medicine/details/${typeof s === "string" ? s : s.name || s.tabletname || s.injectionname || s.capsulename}`}
+                to ={'/searchedmedicine'}
                 key={i}
 
               className="hover:text-black hover:bg-zinc-300 duration-300 font-semibold text-zinc-600 w-[100%] p-10 flex justify-start items-center border-b-2 border-zinc-100"

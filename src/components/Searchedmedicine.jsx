@@ -7,16 +7,19 @@ import Topnav from "./partials/Topnav";
 import Dropdown from "./partials/Dropdown";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Sidenav from "./partials/Sidenav";
+import {useLocation} from "react-router-dom";
 
-const Medicine = () => {
+const Searchmedicine = () => {
     document.title = "Medico | Medicine ";
+    const loaction  = useLocation();
+    const {medname} = loaction.medname || {};
     const navigate = useNavigate();
     const [category, setCategory] = useState("capsule");
     const [medicine, setmedicine] = useState([]);
     const [page, setPage] = useState(1);
     const [hasMore, setHasMore] = useState(true);
     const [isOpen, setIsOpen] = useState(false); // State to track sidenav visibility
-    const  [loadmed, setloadmed]= useState("Duzela 20 Capsule DR")
+    const  [loadmed, setloadmed]= useState("Dolonex 20mg Capsule")
     const  [category1, setcategory1]= useState("injection")
     const toggleSideNav = () => {
         setIsOpen(!isOpen);
@@ -24,59 +27,59 @@ const Medicine = () => {
     const openSideNav = () => {
         setIsOpen(!isOpen);
     };
-    const GetranMedicine = async () => {
-        try {
-            console.log(loadmed)
-            const { data } = await axios.post(`/getrandomdata`, {
-                query: category,size:20
-            });
-            console.log("th",data);
-            if (data.length > 0) {
-                setmedicine((preState) => [...preState, ...data]);
-                setPage(page + 1);
-                console.log("if",data);
-            } else {
-                setHasMore(false);
-            } }
-        catch (error) {
-            console.log("Error: ", error);
-        }
-    };
-
-    // const GetMedicine = async () => {
-    //   try {
-    //     console.log(loadmed)
-    //     const { data } = await axios.post(`/search/pagesearch`, {
-    //       query: loadmed
-    //     });
-    // console.log(data);
-    //     if (data.length > 0) {
-    //       setmedicine((preState) => [...preState, ...data]);
-    //       setPage(page + 1);
-    //     } else {
-    //       setHasMore(false);
+    // const GetranMedicine = async () => {
+    //     try {
+    //         console.log(loadmed)
+    //         const { data } = await axios.post(`/getrandomdata`, {
+    //             query: category,size:20
+    //         });
+    //         console.log("th",data);
+    //         if (data.length > 0) {
+    //             setmedicine((preState) => [...preState, ...data]);
+    //             setPage(page + 1);
+    //             console.log("if",data);
+    //         } else {
+    //             setHasMore(false);
+    //         } }
+    //     catch (error) {
+    //         console.log("Error: ", error);
     //     }
-    //   } catch (error) {
-    //     console.log("Error: ", error);
-    //   }
     // };
+
+    const GetMedicine = async () => {
+      try {
+        console.log(loadmed)
+        const { data } = await axios.post(`/search/pagesearch`, {
+          query: loadmed
+        });
+    console.log(data);
+        if (data.length > 0) {
+          setmedicine((preState) => [...preState, ...data]);
+          setPage(page + 1);
+        } else {
+          setHasMore(false);
+        }
+      } catch (error) {
+        console.log("Error: ", error);
+      }
+    };
 
     const refreshHandler = () => {
         if (medicine.length === 0) {
-            // GetMedicine();
-            GetranMedicine();
+            GetMedicine();
+            // GetranMedicine();
 
         } else {
             setPage(1);
             setmedicine([]);
-            // GetMedicine();
-            GetranMedicine();
+            GetMedicine();
+            // GetranMedicine();
         }
     };
-    console.log(medicine.length);
+
     useEffect(() => {
         refreshHandler();
-        GetranMedicine();
+        // GetranMedicine();
     }, [category]);
 
 
@@ -124,7 +127,7 @@ const Medicine = () => {
                 {/* InfiniteScroll with scrollableTarget */}
                 <InfiniteScroll
                     dataLength={medicine.length}
-                    next={GetranMedicine}
+                    next={GetMedicine}
                     hasMore={hasMore}
                     loader={<h1>Loading...</h1>}
                     scrollableTarget="scrollableDiv"
@@ -138,4 +141,4 @@ const Medicine = () => {
     );
 };
 
-export default Medicine;
+export default Searchmedicine;
