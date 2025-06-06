@@ -1,7 +1,7 @@
 **NOTE: This Frontend Project with all backend images will not Work without Backend however it work work with basic frontend prototype and i have inserted link of backend repo and you can check this video also**
 **Backend Repository- https://github.com/Abhay13332/backendmedicine**<br>
 **Website Video Link-  https://drive.google.com/file/d/1c9wylNQrWHOYj4bsf5ReSivukd2ubM5y/view?usp=drive_link**
-#**Preview - https://medico-project.onrender.com" **
+**Preview - https://medico-project.onrender.com**
 
 # MEDICO - Your Trusted Medicine Information Hub
 
