@@ -52,6 +52,5 @@ The design includes a left sidebar with categories (Home, Medicine, Health Condi
 **AboutUs Page**
 ![alt text](AboutUs.png)
 
-## Contributing
-
+## Contributing👋
 Contributions are welcome! Feel free to open issues or submit pull requests to help improve the project.
