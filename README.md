@@ -37,7 +37,7 @@ The design includes a left sidebar with categories (Home, Medicine, Health Condi
 - *Categorized Content*: Organized sections including Medicine, Health Conditions, Personal Care, Vitamins & Supplements, and Prescription.
 - *Detailed Descriptions*: Learn about interactions, dosage, and side effects.
 - *Real-Time Data*: Ensures reliability with the latest information.
-- *User-Friendly Interface*: Intuitive design for seamless navigation.
+- *User-Friendly Interface*: Intuitive design for seamless navigation.<br/><br/>
 
 ## Website's Screenshot
 **Full Page**
