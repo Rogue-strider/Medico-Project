@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "http://172.16.43.121:8004",
+  baseURL: "https://backendmedicine-4c4t.onrender.com",
   headers: {
     accept: "application/json",
     },

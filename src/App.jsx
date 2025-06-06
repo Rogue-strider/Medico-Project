@@ -10,18 +10,20 @@ import Contact from "./components/Contact";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PrescriptionAnalyzer from "./components/Prescription";
-import Medicinedetails from "./components/Moviedetails";
-import Medicinesdetails from "./components/Medicinesdetails";
+import Medicinealternative from "./components/Medicinealternative";
 import Searchedmedicine from "./components/Searchedmedicine";
 import Cart from "./components/Cart";
+import MedicDetails from "./components/Medicdetails.jsx";
+// import Medicinesalternative from "./components/Medicinealternative.jsx";
 
 const App = () => {
   return (
-    <div className="bg-[#1f1e24] w-screen h-screen flex">
+    <div className="bg-[#161616] w-screen h-screen flex">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/medicine" element={<Medicine />} />
-        <Route path="/medicine/details/:id" element={<Medicinesdetails />}></Route>
+        <Route path="/medicine/alternative/:id" element={<Medicinealternative />}/>
+        <Route path="/medicine/details/:id" element={<MedicDetails/>}/>
           {/*<Route path="/searchedmedicine" element={<Searchedmedicine />} />*/}
         <Route path="/healthConditions" element={<HealthConditions />} />
         <Route path="/personalCare" element={<PersonalCare />} />

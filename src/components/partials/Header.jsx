@@ -46,13 +46,13 @@ const Header = () => {
   return (
     <div className="w-full h-[20vh] relative overflow-hidden mb-[8vw] ml-[3vw]">
       <div
-        className="w-full h-full bg-[url('https://via.placeholder.com/1920x1080?text=Medical+Background')] bg-cover bg-center"
+        className="w-full h-full bg-[#161616] bg-cover bg-center"
         style={{
           backgroundColor: '#1f1e24',
           backgroundBlendMode: 'overlay',
         }}
       >
-        <div className="w-full h-full bg-gradient-to-br from-[#1f1e24]/90 to-[#1f1e24]/70 flex justify-start items-end p-5">
+        <div className="w-full h-full bg-[#161616]   flex justify-start items-end p-5">
           <div className="z-10">
             <h1 className="text-5xl md:text-6xl font-extrabold uppercase text-[#656acd] drop-shadow-[2px_2px_4px_rgba(0,0,0,0.5)] mb-2">
               MEDICO
