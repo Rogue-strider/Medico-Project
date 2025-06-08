@@ -10,7 +10,7 @@ Welcome to *MEDICO*, a comprehensive platform designed to provide users with acc
 
 MEDICO is a user-friendly website that simplifies medicine exploration with real-time updates. It offers categorized sections for easy navigation and a search functionality to quickly find information on medicines, health conditions, personal care, vitamins and supplements, and prescriptions. Unlike generic health platforms, MEDICO stands out by bridging the gap between patients and essential medicine knowledge, ensuring accessibility with a focus on precision and a seamless user experience.
 
-### How MEDICO Differs from Others💫
+### How MEDICO Differs from Others💫<hr/>
 - *Real-Time Updates*: Provides the latest medicine information, setting it apart from static health websites.
 - *User-Centric Design*: Intuitive interface with categorized navigation, making it easier than cluttered multi-purpose health portals.
 - *Comprehensive Coverage*: Includes detailed descriptions of interactions, dosage, and side effects, going beyond basic overviews offered by competitors.
